@@ -42,4 +42,14 @@ module.exports = class User extends Model {
 
         return decoded;
     }
+
+     /*
+        @param: none
+        @post: Return the generated auth JWT token
+    */
+    async generateAuthenticationToken() {
+
+        let data = await this.getById(75);
+        return this.getJwt(data[0]);
+    }
  }

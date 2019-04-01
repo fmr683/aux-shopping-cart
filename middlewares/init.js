@@ -64,7 +64,7 @@
 	}
 
 	/**
-	 * Export module fumctions to be accessed from outside
+	 * Export module functions to be accessed from outside
 	 */
 	module.exports = {
 		initialize: initialize

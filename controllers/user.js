@@ -83,8 +83,6 @@ module.exports.login = async (req, res, next) => {
         }
     }
     catch(error) {
-        console.log(error);
-        
         let response = responseMessages.commonResponse(responseMessages.FAIL);
         return res.status(500).json(response);
     }
