@@ -12,11 +12,12 @@ var authentication = require('./middlewares/authentication');
 // Routes
 var usersRouter = require('./routes/users');
 var productsRouter = require('./routes/products');
+var cartsRouter = require('./routes/carts');
 
 var app = express();
 
 
-app.use(session({ secret: config.get('express-session-secret'), saveUninitialized: true, resave: true, cookie: { maxAge: 3600000, expires: new Date(Date.now() + 3600000) }})); // 1 Hours
+app.use(session({ secret: config.get('express-session-secret'), saveUninitialized: true, resave: true, cookie: { maxAge: 3600000 }})); // 1 Hours
 
 
 // Enable CORS
@@ -39,7 +40,7 @@ app.use(function(req, res, next) {
 // API Calls
 app.use('/v1/users', usersRouter);
 app.use('/v1/products', productsRouter);
-
+app.use('/v1/cart', cartsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

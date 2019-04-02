@@ -5,7 +5,7 @@ const config = require('config');
 
 var server;
 
-describe('Check User Authentication ', () => {
+describe('Check Product Routes ', () => {
     beforeEach(() => { server = require('../../bin/www'); })
     afterEach(async () => { server.close(); });
 
