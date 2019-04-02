@@ -109,7 +109,10 @@ module.exports = class Model extends Database {
         @post: Delete record from table
     */
     delete(id) {
-        return this.dbQuery('DELETE FROM ' + this.table + ' WHERE ' + this.primaryKey + ' = ?', [id]);
+        if (id == undefined || id == '') 
+            return this.dbQuery('DELETE FROM ' + this.table); // delete all records
+        else 
+            return this.dbQuery('DELETE FROM ' + this.table + ' WHERE ' + this.primaryKey + ' = ?', [id]); // delete by id
     }
 
 

@@ -11,6 +11,7 @@ var authentication = require('./middlewares/authentication');
 
 // Routes
 var usersRouter = require('./routes/users');
+var productsRouter = require('./routes/products');
 
 var app = express();
 
@@ -37,6 +38,7 @@ app.use(function(req, res, next) {
 
 // API Calls
 app.use('/v1/users', usersRouter);
+app.use('/v1/products', productsRouter);
 
 
 // catch 404 and forward to error handler
