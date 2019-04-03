@@ -1,6 +1,6 @@
 'use strict';
 
-var Database = require("./Database");
+var Database = require("./database");
 var moment = require('moment');
 
 module.exports = class Model extends Database { 

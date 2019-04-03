@@ -10,6 +10,7 @@ describe('Check Product Routes ', () => {
     afterEach(async () => { server.close(); });
 
     let tokenId; 
+    let testEmail = config.get('testEmail');
 
     var header = {
         'api-key': config.get('api.key'),
@@ -28,7 +29,7 @@ describe('Check Product Routes ', () => {
     beforeEach(async () => {
 
         let user =  new User();
-        tokenId = await user.generateAuthenticationToken();
+        tokenId = await user.generateAuthenticationToken(testEmail);
     });
   
     it('should return 404 - no products', async () => {

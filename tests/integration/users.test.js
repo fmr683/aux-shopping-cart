@@ -5,10 +5,14 @@ const config = require('config');
 var server;
 
 describe('Check User Authentication ', () => {
-    beforeEach(() => { server = require('../../bin/www'); })
+
+    beforeEach(() => { 
+        server = require('../../bin/www'); 
+    })
     afterEach(async () => { server.close(); });
 
     let tokenId; 
+    let testEmail = config.get('testEmail');
 
     var header = {
         'api-key': config.get('api.key'),
@@ -16,10 +20,30 @@ describe('Check User Authentication ', () => {
         'Content-type': 'application/json'
     }
   
+    const createUserExec = () => {
+        return request(server).post('/v1/users/')
+            .send({
+                "email": testEmail,
+                "password": "123456",
+                "fname": "Fazlul",
+                "lname": "RMsdfsdf "
+                
+            })
+            .set(header);
+    }
+
+    it('should return 200 - user creation success ', async () => {
+        var user = new User();
+        await user.delete(); // delete all user records
+
+        let res = await createUserExec();
+        expect(res.status).toBe(200);
+    });
+    
     const noTokenExec = () => {
       return request(server).post('/v1/users/login')
         .send({
-            "email": "frm683@gmail.com",
+            "email": testEmail,
             "password": "123456"
             
         })
@@ -27,8 +51,8 @@ describe('Check User Authentication ', () => {
     }
   
     beforeEach(async () => {
-        let user =  new User();
-        tokenId = await user.generateAuthenticationToken();
+        var user = new User();
+        tokenId = await user.generateAuthenticationToken(testEmail);
     });
   
     it('should return 401 - no token', async () => {
@@ -39,7 +63,7 @@ describe('Check User Authentication ', () => {
     const invalidEmail = () => {
         return request(server).post('/v1/users/login')
             .send({
-                "email": "frm683gmail.com",
+                "email": 'invalid-email',
                 "password": "123456"
             })
             .set(header);
@@ -53,7 +77,7 @@ describe('Check User Authentication ', () => {
     const tokenExec = () => {
         return request(server).post('/v1/users/login')
             .send({
-                "email": "frm683@gmail.com",
+                "email": testEmail,
                 "password": "123456"
             })
             .set(header);
@@ -64,29 +88,12 @@ describe('Check User Authentication ', () => {
         expect(res.status).toBe(200);
     });
 
-    let getTime = new Date().getTime();
-
-    const createUserExec = () => {
-        return request(server).post('/v1/users/')
-            .send({
-                "email": getTime + "@gmail.com",
-                "password": "123456",
-                "fname": "Fazlul",
-                "lname": "RMsdfsdf "
-                
-            })
-            .set(header);
-    }
-
-    it('should return 200 - user creation success ', async () => {
-        let res = await createUserExec();
-        expect(res.status).toBe(200);
-    });
+ 
 
     const createDuplicateUserExec = () => {
         return request(server).post('/v1/users/')
             .send({
-                "email": getTime + "@gmail.com",
+                "email": testEmail,
                 "password": "123456",
                 "fname": "<script>alert('1')</script>Fazlul",
                 "lname": "RMsdfsdf "

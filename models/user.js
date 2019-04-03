@@ -1,6 +1,6 @@
 'use strict';
 
-const Model = require("./Model");
+const Model = require("./model");
 const jwt = require('jsonwebtoken');
 const config = require('config');
 const ENV = (process.env.ENV || 'dev');
@@ -47,9 +47,11 @@ module.exports = class User extends Model {
         @param: none
         @post: Return the generated auth JWT token
     */
-    async generateAuthenticationToken() {
+    async generateAuthenticationToken(email) {
 
-        let data = await this.getById(75);
+        let dataArray = [];
+        dataArray["email"] = email;
+        let data = await this.where(['email'],dataArray);
         return this.getJwt(data[0]);
     }
  }

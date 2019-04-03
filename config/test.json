@@ -25,5 +25,6 @@
             "port": 5000
         }
     },
-    "express-session-secret": "aux-shopping-cart"
+    "express-session-secret": "aux-shopping-cart",
+    "testEmail": "1554324187732@gmail.com"
 }
