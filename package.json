@@ -16,8 +16,7 @@
   "scripts": {
     "test": "jest --watchAll --verbose",
     "start": "nodemon ./bin/www",
-    "devstart": "PORT=8080 NODE_ENV=dev node ./bin/www",
-    "stagingstart": "PORT=8080 NODE_ENV=staging node ./bin/www",
+    "devstart": "PORT=8080 NODE_ENV=dev pm2 start ./bin/www -i 0",
     "prodstart": "PORT=8080 NODE_ENV=prod node ./bin/www"
   },
   "dependencies": {
