@@ -1,0 +1,29 @@
+{
+    "saltRound": 10,
+    // https://momentjs.com/timezone/
+    "defaultTimezone":"Asia/Colombo",
+    // JWT secret key
+    "jwtSecKey": "cV/71ctzh3JuKBc5Oih71VVbHJ7yqFDvJ3JvmAxtbX1kk+ZVK+k8jEAH9p7gP2nICMAa9zZ6L+uJ3hP+fLIl6A==",
+    "api": {
+        "key": "Q0E0MUExMkVBMjgyOERCQzQ5Q0RCR",
+        "secret": "C40CB2B60C53AF5267D03AACA9416",
+        "guestActions": [
+            {"url": "/v1/users/", "method": "POST"},
+            {"url": "/v1/users/login", "method": "POST"}
+        ]
+    },
+    "dev" : {
+        "database": {
+            "host": "localhost",
+            "user": "root",
+            "password": "root",
+            "connectionLimit": 50,
+            "name": "aux-shopping-cart",
+            "debug": true
+        },
+        "server": {
+            "port": 5000
+        }
+    },
+    "express-session-secret": "aux-shopping-cart"
+}
