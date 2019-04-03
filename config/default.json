@@ -18,7 +18,7 @@
             "user": "root",
             "password": "",
             "connectionLimit": 50,
-            "name": "add_manager",
+            "name": "aux-shopping-cart",
             "debug": true
         },
         "server": {
