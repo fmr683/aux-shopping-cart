@@ -8,6 +8,7 @@ A Simple API for shopping cart system, programmed with NodeJS and MySQL as stora
 - [Installation](#installation)
 - [Features](#features)
 - [Security](#security)
+- [Project evolution](#projectevolution)
 - [Documentation](#documentation)
 - [Demo Server](#demo)
 - [What Next](#whatnext)
@@ -43,6 +44,9 @@ A Simple API for shopping cart system, programmed with NodeJS and MySQL as stora
 - Header auth keys passed on every API header
 - JWT token 
 - bcrypt password encryption used for the password generation
+
+## Project Evolution
+- [master] <- [develop] <- [Feature branch]
 
 ## Documentation
 - You can visit the API documentation via http://localhost:3000/apidoc/ || http://ec2-54-255-185-199.ap-southeast-1.compute.amazonaws.com:3000/apidoc/
