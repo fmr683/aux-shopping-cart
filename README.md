@@ -8,10 +8,10 @@ A Simple API for shopping cart system, programmed with NodeJS and MySQL as stora
 - [Installation](#installation)
 - [Features](#features)
 - [Security](#security)
-- [Project evolution](#projectevolution)
+- [Evolution](#evolution)
 - [Documentation](#documentation)
 - [Demo Server](#demo)
-- [What Next](#whatnext)
+- [Next](#next)
 - [Auther](#author)
 
 ---
@@ -45,7 +45,7 @@ A Simple API for shopping cart system, programmed with NodeJS and MySQL as stora
 - JWT token 
 - bcrypt password encryption used for the password generation
 
-## Project Evolution
+## Evolution
 - [master] <- [develop] <- [Feature branch]
 
 ## Documentation
@@ -56,7 +56,7 @@ A Simple API for shopping cart system, programmed with NodeJS and MySQL as stora
 - Example `http://ec2-54-255-185-199.ap-southeast-1.compute.amazonaws.com:3000/v1/user/login`
 - Demo server will be destroyed after two weeks.
 
-## What Next?
+## Next?
 - Use redis for temporary storage and high performence
 - Create load testing
 
