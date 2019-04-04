@@ -12,7 +12,7 @@ A Simple API for shopping cart system, programmed with NodeJS and MySQL as stora
 - [Documentation](#documentation)
 - [Demo Server](#demo)
 - [Next](#next)
-- [Auther](#author)
+- [Author](#author)
 
 ---
 ## Requirment
