@@ -35,8 +35,8 @@ A Simple API for shopping cart system, programmed with NodeJS and MySQL as stora
 
 - User login
 - User registration
-- User update information
-- Add product to Cart
+- User profile update
+- Add product to cart
 - View cart details
 
 ## Security
