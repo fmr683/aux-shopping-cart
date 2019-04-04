@@ -29,7 +29,7 @@ A Simple API for shopping cart system, programmed with NodeJS and MySQL as stora
 - With craeted user create two database with `aux-shopping-cart` and `aux-shopping-cart-test`
 - Import two databases from the project directory `aux-shopping-cart/db` 
 - Execute Test (Optinal) `npm test`
-- You can start the project `npm start start` || `npm start devstart` || `npm start prodstart`
+- You can start the project `npm start` || `npm run devstart` || `npm run prodstart`
 
 ## Features
 
