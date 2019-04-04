@@ -26,7 +26,7 @@ A Simple API for shopping cart system, programmed with NodeJS and MySQL as stora
 - Clone this repo to your local machine using `https://github.com/fmr683/aux-shopping-cart.git`
 - Navigate to `aux-shopping-cart` directory and execute the `npm install`
 - Fire up the mysql and create a username and password with `root` with all prvilages
-- With craeted user create two database with `aux-shopping-cart` and `aux-shopping-cart-test`
+- With created user, create two database with `aux-shopping-cart` and `aux-shopping-cart-test`
 - Import two databases from the project directory `aux-shopping-cart/db` 
 - Execute Test (Optinal) `npm test`
 - You can start the project `npm start` || `npm run devstart` || `npm run prodstart`
